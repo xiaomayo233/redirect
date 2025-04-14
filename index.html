@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #iframe {
+        border: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+    </style>
+    <script>
+      window.onload = ()=>{
+        const iframe = document.quertSelector("#iframe");
+        const url = new URL(window.location.href);
+        const redirectUrl = url.searchParams.get("url");
+        iframe.scrc = redirectUrl;
+      }
+    </script>
+  </head>
+  <body>
+    <iframe id="iframe"></iframe>
+  </body>
+</html>
